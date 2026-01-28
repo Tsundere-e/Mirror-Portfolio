@@ -57,29 +57,6 @@ export function InvertedWorld({ activeId, lockedId, onHover, onLock, onUnlock }:
           </button>
         </div>
       </header>
-      <div className="inverted-hero">
-        <div className="hero-copy">
-          <h2>Archive status</h2>
-          <p>Corruption rising. Maintain view and inspect each file.</p>
-          <div className="hero-stats">
-            <div>
-              <span>Observer feed</span>
-              <strong>Active</strong>
-            </div>
-            <div>
-              <span>Integrity</span>
-              <strong>Fractured</strong>
-            </div>
-            <div>
-              <span>Alert band</span>
-              <strong>Elevated</strong>
-            </div>
-          </div>
-        </div>
-        <div className="hero-media">
-          <AssetSlot label="fracture_texture" url={ASSETS.fracture_texture} height="180px" />
-        </div>
-      </div>
       <div className="inverted-shell">
         <aside className="inverted-nav">
           <div className="nav-header">

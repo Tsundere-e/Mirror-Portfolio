@@ -56,64 +56,39 @@ export function LoadingWorld({ onAccess }: LoadingWorldProps) {
       <div className="loading-background">
         <AssetSlot label="loading_bg_loop" url={ASSETS.loading_bg_loop} className="background-slot" />
       </div>
-      <div className="loading-nav">
-        <div className="nav-brand">
-          <span className="brand-mark" />
-          <span>Access Gate</span>
-        </div>
-        <nav className="nav-links">
-          <button type="button">Home</button>
-          <button type="button">Gallery</button>
-          <button type="button">About</button>
-          <button type="button">Profile</button>
-        </nav>
-        <div className="nav-status">
-          <span className="nav-pill">Observer channel active</span>
-          <span className="nav-pill">Activity detected</span>
-        </div>
-      </div>
       <div className="loading-grid">
-        <div className="loading-panel hero-panel">
+        <div className="loading-panel">
           <div className="panel-header">
             <div>
               <h1>Access Monitor</h1>
-              <p>Keep focus steady. The gate responds to your input.</p>
+              <p>Observer channel active</p>
             </div>
             <div className="signal-indicator">
               <span className="signal-dot" />
-              <span>Signal lock engaged</span>
+              <span>Activity detected</span>
             </div>
           </div>
-          <div className="hero-content">
-            <div className="hero-text">
-              <div className="status-block">
-                <h2>System Status</h2>
-                <ul>
-                  {bootLines.map((line) => (
-                    <li key={line}>{line}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="status-block">
-                <h2>Gate Integrity</h2>
-                <div className="meter">
-                  <div className="meter-bar" style={{ width: `${Math.round(progress * 100)}%` }} />
-                </div>
-                <div className="meter-values">
-                  <span>Sync {Math.round(progress * 100)}%</span>
-                  <span>Threshold 100%</span>
-                </div>
-                <div className="status-tags">
-                  <span>Lock channel: armed</span>
-                  <span>Sector: 07</span>
-                </div>
-              </div>
+          <div className="status-grid">
+            <div className="status-block">
+              <h2>System Status</h2>
+              <ul>
+                {bootLines.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
             </div>
-            <div className="hero-visual">
-              <AssetSlot label="loading_character" url={ASSETS.loading_character} height="260px" />
-              <div className="hero-overlay">
-                <span>Subject frame locked</span>
-                <span>Observer alignment stable</span>
+            <div className="status-block">
+              <h2>Gate Integrity</h2>
+              <div className="meter">
+                <div className="meter-bar" style={{ width: `${Math.round(progress * 100)}%` }} />
+              </div>
+              <div className="meter-values">
+                <span>Sync {Math.round(progress * 100)}%</span>
+                <span>Threshold 100%</span>
+              </div>
+              <div className="status-tags">
+                <span>Lock channel: armed</span>
+                <span>Sector: 07</span>
               </div>
             </div>
           </div>
@@ -149,6 +124,11 @@ export function LoadingWorld({ onAccess }: LoadingWorldProps) {
         </div>
         <div className="loading-side">
           <div className="side-card">
+            <h3>Subject Frame</h3>
+            <AssetSlot label="loading_character" url={ASSETS.loading_character} height="220px" />
+            <p>Subject presence confirmed. Do not disengage view.</p>
+          </div>
+          <div className="side-card">
             <h3>Sound Control</h3>
             <div className="sound-control">
               <label className="toggle">
@@ -177,14 +157,6 @@ export function LoadingWorld({ onAccess }: LoadingWorldProps) {
             <div className="surveillance-panel">
               <h4>Observer feed</h4>
               <p>Signal strength stable. Monitoring continues.</p>
-            </div>
-          </div>
-          <div className="side-card">
-            <h3>Access Notes</h3>
-            <p>Maintain position. The gate records each movement.</p>
-            <div className="status-tags">
-              <span>Observer channel: 03</span>
-              <span>Tracking: active</span>
             </div>
           </div>
         </div>
